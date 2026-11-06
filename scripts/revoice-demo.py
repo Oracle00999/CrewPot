@@ -47,6 +47,7 @@ async def generate(shot, text, semaphore):
         audio = OUT / (shot['id'] + '.mp3')
         srt = OUT / (shot['id'] + '.srt')
         rate = 0
+        available = shot['seconds'] - (1 if shot['id'] == '10-close' else 0)
         for attempt in range(3):
             proc = await asyncio.create_subprocess_exec(TTS, '--voice', VOICE, '--rate=+%d%%' % rate,
                 '--text', text, '--write-media', str(audio), '--write-subtitles', str(srt),
@@ -58,14 +59,14 @@ async def generate(shot, text, semaphore):
                 await asyncio.sleep(3)
                 continue
             seconds = duration(audio)
-            if seconds <= shot['seconds'] - 0.2:
+            if seconds <= available - 0.2:
                 shot['narration'] = text
                 shot['voice'] = VOICE
                 shot['speechRatePercent'] = rate
                 shot['speechSeconds'] = seconds
                 print('VOICE READY', shot['id'], round(seconds, 2), 'seconds', flush=True)
                 return
-            rate = math.ceil((seconds / (shot['seconds'] - 0.35) * (1 + rate/100) - 1) * 100) + 1
+            rate = math.ceil((seconds / (available - 0.35) * (1 + rate/100) - 1) * 100) + 1
             assert rate <= 25, 'Narration needs shortening rather than rushing'
         raise RuntimeError('Could not produce a complete, uncut narration for ' + shot['id'])
 
@@ -87,7 +88,7 @@ listing = OUT / 'concat.txt'
 listing.write_text('\n'.join("file '%s.mp4'" % s['id'] for s in manifest['shots']))
 video = OUT / 'CrewPot-demo-natural.mp4'
 run([FFMPEG, '-hide_banner', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', str(listing),
-     '-c', 'copy', '-movflags', '+faststart', str(video)])
+     '-t', '119', '-c', 'copy', '-movflags', '+faststart', str(video)])
 # Match exact service-generated subtitle timings to each preserved scene.
 blocks = []
 elapsed_ms = 0
@@ -108,6 +109,7 @@ for shot in manifest['shots']:
             blocks.append(str(len(blocks)+1)+'\n'+timing+'\n'+'\n'.join(parts[2:]))
     elapsed_ms += shot['seconds']*1000
 (OUT / 'CrewPot-demo.srt').write_text('\n\n'.join(blocks)+'\n')
+manifest['durationSeconds'] = duration(video)
 manifest['disclosure'] = 'Real app captured in Chrome. Script-signed Devnet transactions. Confirmation waits cut. Synthetic neural narration: ' + VOICE + '. No browser-wallet signing is depicted.'
 manifest['narrator'] = {'voice': VOICE, 'engine': 'Microsoft neural speech via edge-tts', 'synthetic': True}
 manifest['videoSha256'] = hashlib.sha256(video.read_bytes()).hexdigest()

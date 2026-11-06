@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-11-06T17:52:13.666Z",
-  "durationSeconds": 120,
+  "durationSeconds": 119.09,
   "disclosure": "Real app captured in Chrome. Script-signed Devnet transactions. Confirmation waits cut. Synthetic neural narration: en-US-AndrewMultilingualNeural. No browser-wallet signing is depicted.",
   "shots": [
     {
@@ -146,5 +146,10 @@
     "engine": "Microsoft neural speech via edge-tts",
     "synthetic": true
   },
-  "videoSha256": "081ae9170a994aa91ecd1163efdc8e3c0492df20e603e7daa3ad3b32c4d86589"
+  "videoSha256": "be2ff53df60348907ba29fb3fc71ccc4dd5da1f55570512c362a9d0d36e06789",
+  "trim": {
+    "requestedEndSeconds": 119,
+    "lastSpokenSubtitleSeconds": 117.7,
+    "reencoded": false
+  }
 }

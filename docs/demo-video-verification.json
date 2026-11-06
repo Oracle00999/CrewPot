@@ -66,18 +66,24 @@
     }
   ],
   "video": {
-    "durationSeconds": 120.02,
+    "durationSeconds": 119.09,
     "resolution": "1920x1080",
     "videoCodec": "H.264",
     "audioCodec": "AAC",
     "audioPeakDb": -1.4,
     "fullyDecoded": true,
-    "captionContinuitySamplesPassed": 120,
-    "bytes": 3989372,
-    "sha256": "081ae9170a994aa91ecd1163efdc8e3c0492df20e603e7daa3ad3b32c4d86589",
+    "captionContinuitySamplesPassed": 119,
+    "bytes": 3983583,
+    "sha256": "be2ff53df60348907ba29fb3fc71ccc4dd5da1f55570512c362a9d0d36e06789",
     "neuralVoice": "en-US-AndrewMultilingualNeural",
-    "originalVideoStreamPreserved": true,
-    "videoStreamHash": "SHA256=cfb4d995edf11d0470bb2431e6659b66f18ba3a1025615a4341204ce7930cf40",
-    "allNarrationFitsWithoutCutting": true
+    "originalVideoStreamPreserved": false,
+    "allNarrationFitsWithoutCutting": true,
+    "untrimmedVideoStreamHash": "SHA256=cfb4d995edf11d0470bb2431e6659b66f18ba3a1025615a4341204ce7930cf40",
+    "videoStreamHash": "SHA256=12393cd29f92b1643f37e7326553ebca58dd9996ae60ed36ceda976eeee75c80",
+    "videoReencoded": false,
+    "trimmedTailSeconds": 0.93,
+    "lastSpokenSubtitleSeconds": 117.7,
+    "removedTailAudioPeakDb": -91.0,
+    "underTwoMinuteLimit": true
   }
 }

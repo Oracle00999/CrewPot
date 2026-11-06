@@ -1,6 +1,6 @@
 # Automated demo recording
 
-The native browser-control connection was unavailable. The workaround uses a separate headless Chrome session controlled by Playwright, captures the actual local app, and edits the footage into a narrated two-minute MP4. It does not access the user's personal browser profile.
+The native browser-control connection was unavailable. The workaround uses a separate headless Chrome session controlled by Playwright, captures the actual local app, and edits the footage into a narrated MP4 under two minutes. It does not access the user's personal browser profile.
 
 Transactions are signed by the existing local Devnet demo wallets through `scripts/prepare-demo.ts`. The video visibly discloses scripted signing and shortened confirmation waits. It does not depict browser-wallet signing. For reliable capture, the recorder forwards unchanged responses from the real Devnet RPC through its HTTP connection pool. The app reads actual RPC responses; no balances, account data, signatures, or wallet confirmations are mocked.
 
@@ -8,7 +8,7 @@ Transactions are signed by the existing local Devnet demo wallets through `scrip
 
 The generated final delivery directory is `artifacts/demo/final/` (ignored by Git):
 
-- `CrewPot-demo.mp4`: 1920×1080, H.264/AAC, two-minute video.
+- `CrewPot-demo.mp4`: 1920×1080, H.264/AAC, video under two minutes.
 - `CrewPot-demo.srt`: optional narration subtitles.
 - `recording-manifest.json`: shot list, narration, and actual transaction signatures.
 - Ten numbered PNG screenshots, MP4 clips, and synthetic narration source files.
@@ -47,3 +47,5 @@ Public app hosting and video upload remain pending. Source is available at [Orac
 Run `/private/tmp/crewpot-voice-tools/bin/python scripts/revoice-demo.py`. This rewrites the lines for conversational delivery, generates neural audio with service-timed subtitles, checks every line fits its scene, normalizes loudness, and copies the existing video streams without re-encoding. Generated replacement files are in `artifacts/demo/final/neural/`.
 
 `CREWPOT_NARRATOR` selects the voice and `CREWPOT_EDGE_TTS` selects the CLI path. The narration text is sent to the online speech service; wallet material is never used by this step. The new audio is checked before replacing the canonical delivery file.
+
+The submission export ends at 119 seconds (the MP4 container reports approximately 119.09 seconds). Only silent closing hold time was removed; the last spoken subtitle ends at 117.7 seconds. Both recording and revoicing commands now cap the final export below the two-minute limit.

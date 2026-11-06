@@ -58,7 +58,7 @@ try {
     const voiceProbe = await run(ffmpeg,['-hide_banner','-i',voice,'-f','null','-']);
     const match = voiceProbe.stderr.match(/Duration: (\d+):(\d+):([\d.]+)/);
     assert.ok(match, 'Could not measure neural narration');
-    assert.ok(Number(match[1])*3600+Number(match[2])*60+Number(match[3]) < shot.seconds, 'Narration exceeds scene; shorten text or adjust CREWPOT_SPEECH_RATE');
+    assert.ok(Number(match[1])*3600+Number(match[2])*60+Number(match[3]) < shot.seconds - (shot.id === '10-close' ? 1 : 0), 'Narration exceeds scene; shorten text or adjust CREWPOT_SPEECH_RATE');
     const context = await browser.newContext({ viewport:{width:1600,height:900}, deviceScaleFactor:1, locale:'en-GB', timezoneId:'Africa/Lagos', recordVideo:{dir:path.join(out,'raw'),size:{width:1600,height:900}} });
     const page = await context.newPage();
     const video = page.video();
@@ -137,8 +137,8 @@ try {
 } finally { await browser.close(); }
 const list=path.join(out,'concat.txt');
 writeFileSync(list,shots.map(s=>`file '${s.id}.mp4'`).join('\n'));
-await run(ffmpeg,['-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',list,'-c','copy','-movflags','+faststart',path.join(out,'CrewPot-demo.mp4')],{timeout:120000});
-writeFileSync(path.join(out,'recording-manifest.json'),JSON.stringify({recordedAt:new Date().toISOString(),durationSeconds:shots.reduce((n,s)=>n+s.seconds,0),disclosure:'Real app captured in Chrome. Transactions signed by local demo scripts on Devnet. Confirmation waits cut. Synthetic neural narration. No browser wallet signing is depicted.',shots:metadata},null,2));
+await run(ffmpeg,['-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',list,'-t','119','-c','copy','-movflags','+faststart',path.join(out,'CrewPot-demo.mp4')],{timeout:120000});
+writeFileSync(path.join(out,'recording-manifest.json'),JSON.stringify({recordedAt:new Date().toISOString(),durationSeconds:119,disclosure:'Real app captured in Chrome. Transactions signed by local demo scripts on Devnet. Confirmation waits cut. Synthetic neural narration. No browser wallet signing is depicted.',shots:metadata},null,2));
 let elapsed = 0;
 const stamp = seconds => new Date(seconds * 1000).toISOString().slice(11,23).replace('.', ',');
 const subtitles = shots.map((shot, i) => {
