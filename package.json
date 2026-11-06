@@ -1,0 +1,41 @@
+{
+  "name": "crewpot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "contract:build": "anchor build && node scripts/sync-idl.mjs",
+    "contract:test": "cargo test -p crewpot",
+    "demo:setup": "tsx scripts/setup-demo.ts",
+    "demo:verify": "tsx scripts/verify-lifecycle.ts"
+  },
+  "dependencies": {
+    "@anchor-lang/core": "1.2.2",
+    "@solana/spl-token": "0.4.14",
+    "@solana/wallet-adapter-base": "^0.9.28",
+    "@solana/wallet-adapter-react": "^0.15.40",
+    "@solana/wallet-adapter-react-ui": "0.9.39",
+    "@solana/web3.js": "^1.99.0",
+    "lucide-react": "^0.468.0",
+    "next": "16.4.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "overrides": {
+    "toml": "5.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.1.0"
+  }
+}

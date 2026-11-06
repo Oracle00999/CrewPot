@@ -1,0 +1,61 @@
+{
+  "network": "localnet",
+  "endpoint": "http://127.0.0.1:8899",
+  "programId": "CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba",
+  "payoutPot": "9Ka3aJwThzcAHzZ13pasUxRb6EHezcQzGohZfoecKhEA",
+  "refundPot": "FGxKHu6r6pQfT8LLtgRk3ejRuXZ54xtCeXTyCaau2uo2",
+  "checkedAt": "2026-11-06T05:24:58.275Z",
+  "signatures": [
+    {
+      "action": "Create Weekend Gaming Fund",
+      "signature": "rXTU7769sLKDZYScxCibE8B28yShF9BNZsqqdFEEHf3noBfc9pGgvLuAV3NQouy2qKRT28o9w53abBdsMT5LjH5"
+    },
+    {
+      "action": "Contribution 1",
+      "signature": "2GSb1bjygeSn76KWmdzgNQbXT1n16cWGLzXPt53crQsUVmBNEZz2fUY5dqyUAMaJ255zTadszh5y7W8cpf3owhyf"
+    },
+    {
+      "action": "Contribution 2",
+      "signature": "44iLWc35c7HE9G121tiTARcYDsu6inuFbXbUSfdo8UXZFMw275X2sPzpwD9DSVVF8isv6RfjscoQ5WbR6Kt383jf"
+    },
+    {
+      "action": "Contribution 3",
+      "signature": "557TRJLDNtarvE9v4ozb4c9Rqp5w1LG5oR8xCVz83Z3stGwuQAgGg9Fx8wZvs2Mxwe1JJmca7rfjpKwfMBAGxXPm"
+    },
+    {
+      "action": "Approval 1",
+      "signature": "66hhv2Wfy78Qd4Zr9GRjs4XAYKstNLChgEXnBzAnnPHAk7U4KK8o73ihavQxnmKgyfxWg1y1MAvdQ1po4QQLfXh5"
+    },
+    {
+      "action": "Approval 2",
+      "signature": "2v8DAwqXCohY2ZkMCvLWEz6Y4cGg75qMAhGmGPZcRnzGDebUHTQMno9rG6hYcxEnbbQxcPXnhWK5wCDz8PFJ2Sj2"
+    },
+    {
+      "action": "Release payout",
+      "signature": "5Wesecb27xmPWTf9y247hsGfKUPuywE9RihejTnJCKUYZPsgoYe2dqYtzXVYT6E2bnZrJut6WfsXyHZSDgBsApuW"
+    },
+    {
+      "action": "Create Refund Protection Demo",
+      "signature": "33qo6guJfcAgX1gyqALqaEHstCQmwcq1Zc9FosR7mJdEpiiwK8mYTcnFKZa8ibb5YDW4d3pwmS3d89MG4N2Nb3jx"
+    },
+    {
+      "action": "Refund demo contribution",
+      "signature": "2r79fYr31XHRkFxSzWwdYtFd7dxoqviG6WRNsSZ9puM9vMfGEcZMBnSynsdyPGpDx5mM7G2EwKy6te2YVKnfmtJU"
+    },
+    {
+      "action": "Claim refund",
+      "signature": "28X7pY99EZTrJErjpK41n3JHdobT63e3t3p5JGKjpHHQfLybZhRSjh6HLyWtoF3CVg7aYfctELYV4uRmZixWqUUn"
+    }
+  ],
+  "assertions": [
+    "early payout rejected",
+    "exact deposits",
+    "majority authorizes",
+    "exact recipient balance delta",
+    "vault empty after release",
+    "double payout rejected",
+    "early refund rejected",
+    "exact refund",
+    "double refund rejected"
+  ]
+}

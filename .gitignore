@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+target/
+.anchor/
+.env*
+!.env.example
+test-ledger/
+*.log
+.DS_Store
+.vercel/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*-keypair.json
