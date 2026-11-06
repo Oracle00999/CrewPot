@@ -50,4 +50,4 @@ Run one command per scene and wait for confirmation. `fund` submits three contri
 
 ## Delivery status
 
-Devnet deployment and the full scripted lifecycle are verified. A standalone Chrome recorder captured these scenes, with synthetic narration and explicit scripted-signing captions; see [video production](video-production.md). The original browser-control connection remains unavailable, and browser-wallet signing has not been verified. Public hosting, GitHub publishing, and video upload remain deferred.
+Devnet deployment and the full scripted lifecycle are verified. A standalone Chrome recorder captured these scenes, with synthetic narration and explicit scripted-signing captions; see [video production](video-production.md). The original browser-control connection remains unavailable, and browser-wallet signing has not been verified. Source is available at [Oracle00999/CrewPot](https://github.com/Oracle00999/CrewPot). Public app hosting and video upload remain pending.

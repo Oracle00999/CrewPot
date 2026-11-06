@@ -1,6 +1,6 @@
 # Deployment
 
-GitHub and Vercel publication are currently deferred by the developer. Local development remains enabled.
+Source repository: https://github.com/Oracle00999/CrewPot. Frontend hosting has not been configured.
 
 ## Devnet
 
@@ -33,11 +33,11 @@ Update the frontend environment to the Devnet RPC, cluster, program, and mint fr
 5. Open the public URL and verify wallet connection, direct pot links, create/contribute/approve/release/refund, exact balances, and Explorer links.
 6. Add the actual public URL and repository to the README.
 
-No deployment URL or remote repository has been invented. Neither platform has been configured for this project yet.
+The source repository is configured; there is no public frontend URL yet.
 
 ## Upgrade authority
 
-The local test deployment is upgradeable. Once final tests pass, decide whether to make the Devnet demo immutable or transparently retain the upgrade authority for hackathon fixes. Revocation is irreversible and is deliberately not automated in these scripts. Never describe the program as completely trustless while an upgrade authority remains.
+The Devnet deployment is upgradeable. Once final tests pass, decide whether to make the Devnet demo immutable or transparently retain the upgrade authority for hackathon fixes. Revocation is irreversible and is deliberately not automated in these scripts. Never describe the program as completely trustless while an upgrade authority remains.
 
 ## Verified Devnet run
 

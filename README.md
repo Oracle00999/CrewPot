@@ -10,10 +10,9 @@ If the round is not authorized before its deadline, contributors can reclaim the
 
 - Implemented: five Anchor instructions, fixed membership, token vaults, approvals, payouts, refunds, wallet integration, pot creation/review, dashboard, pot details, transaction feedback, Explorer links, responsive styles, and SVG branding.
 - Verified: 55 compiled-program LiteSVM tests; 23 amount, UI-state, and transaction-confirmation tests; TypeScript; production frontend build; local-validator funding/payout/refund lifecycle with balance assertions and transaction signatures.
-- Local preview for this session: **http://127.0.0.1:3002**. The development server selects another port if the requested port is occupied.
 - Program (localnet and Devnet): `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`.
 - Devnet: deployed and verified. Real contributions, approvals, a 30 dUSDC payout, and an exact refund succeeded; early and duplicate attempts failed with the expected contract error codes. See [Devnet evidence](docs/devnet-verification.json).
-- GitHub and public frontend: deferred at the developer’s request.
+- Source: [Oracle00999/CrewPot](https://github.com/Oracle00999/CrewPot). Public frontend hosting remains pending.
 - Pot-scene visual QA: verified in captured Chrome footage. Wallet-extension signing remains unverified; demo transactions are signed by local scripts.
 - Narrated two-minute 1080p demo and ten real browser screenshots: generated locally in `artifacts/demo/final/`. See [video production](docs/video-production.md) and [finalized transaction evidence](docs/demo-video-verification.json). Public video upload remains pending.
 
@@ -60,7 +59,21 @@ The browser build uses Webpack because Anchor’s browser distribution contains 
 
 ## Local setup
 
-Prerequisites: Node 24, npm, Rust, Solana CLI, Anchor 1.2.2. Installed tool versions and verification are recorded in [progress](docs/progress.md).
+The frontend needs Node 24 and npm. Rust, Solana CLI, and Anchor 1.2.2 are needed only to build or deploy the program.
+
+### Run the frontend against Devnet
+
+The example environment includes the deployed program and public demo mint. No private key is required to browse pots.
+
+```sh
+npm ci
+cp .env.example .env.local
+npm run dev -- --port 3002
+```
+
+Open http://127.0.0.1:3002. To send transactions, connect a Devnet wallet with test SOL and demo tokens.
+
+### Build and test the program
 
 ```sh
 npm ci
@@ -133,9 +146,9 @@ SOLANA_RPC_URL=http://127.0.0.1:8899 npm run demo:verify
 
 ## Deployment and demo
 
-The running local preview now connects to **Devnet**, using mint `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn`. [View the deployed program](https://explorer.solana.com/address/CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba?cluster=devnet). The ignored `.env.localnet` preserves the previous local configuration.
+The default frontend configuration connects to **Devnet**, using mint `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn`. [View the deployed program](https://explorer.solana.com/address/CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba?cluster=devnet).
 
-See [deployment](docs/deployment.md) for Devnet and future hosting steps, and [demo script](docs/demo-script.md) for the two-minute presentation. Public demo URL, GitHub repository, and video URL remain pending. Devnet verification is complete.
+See [deployment](docs/deployment.md) for Devnet and future hosting steps, and [demo script](docs/demo-script.md) for the two-minute presentation. Public app hosting and video upload remain pending. Devnet verification is complete.
 
 Brand assets are in `public/branding/`: standalone marks, horizontal/stacked logos for light and dark backgrounds, and an SVG favicon.
 
@@ -154,4 +167,4 @@ Future work, after review and audits: scalable discovery, reminders, more token 
 
 ## AI-assisted development
 
-Built by Anthony Nwazota with Codex assistance for implementation, tests, documentation, and original SVG/UI work. Final event-specific disclosure and eligibility requirements must be reviewed before submission. Development began on November 6, 2026 before the published 6 PM WAT hacking start, following the developer’s updated instruction; eligibility has not been confirmed with organizers.
+Built by Anthony Nwazota with Codex assistance for implementation, tests, documentation, and original SVG/UI work. Final event-specific disclosure and eligibility requirements must be reviewed before submission. Development began on November 6, 2026 before the published 6 PM WAT hacking start; eligibility has not been confirmed with organizers.

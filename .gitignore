@@ -13,5 +13,17 @@ coverage/
 playwright-report/
 test-results/
 *.tsbuildinfo
-artifacts/demo/
+artifacts/
 *-keypair.json
+
+# Local notes, Python tooling, and private wallet material
+.local-notes/
+.venv/
+__pycache__/
+*.py[cod]
+*.pem
+*.key
+/wallets/
+/secrets/
+/id.json
+/wallet.json

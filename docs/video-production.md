@@ -40,7 +40,7 @@ Use the stable production server during recording: development hot reloads can i
 
 The recorder resumes completed numbered clips when rerun. To create an entirely new take, preserve the existing output directory under a different name and archive the external public `recording.json` before staging fresh pots. Never delete or publish wallet private key files. A single member contribution or approval can also be driven with `npm run demo:scene -- fund 1` or `npm run demo:scene -- approve 1`.
 
-Public hosting, source publishing, and video upload remain deferred. A local MP4 does not itself complete a public submission.
+Public app hosting and video upload remain pending. Source is available at [Oracle00999/CrewPot](https://github.com/Oracle00999/CrewPot). A local MP4 does not itself complete a public submission.
 
 ## Replace narration without recording again
 
