@@ -28,7 +28,9 @@ async function main() {
   console.log(
     `Network: ${network}; deployer: ${deployer.publicKey.toBase58()}`,
   );
-  if ((await connection.getBalance(deployer.publicKey)) < LAMPORTS_PER_SOL) {
+  // Three 0.08 SOL demo-wallet top-ups plus mint/account rent and fees.
+  // Deployment may leave less than 1 SOL while still covering all setup costs.
+  if ((await connection.getBalance(deployer.publicKey)) < 0.3 * LAMPORTS_PER_SOL) {
     try {
       const signature = await connection.requestAirdrop(
         deployer.publicKey,

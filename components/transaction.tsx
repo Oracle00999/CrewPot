@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Transaction } from "@solana/web3.js";
+import { confirmByPolling } from "@/lib/confirmation";
 import {
   assertNetwork,
   connection,
@@ -52,7 +53,8 @@ export function useTransaction(onConfirmed?: () => void | Promise<void>) {
       });
       setState({ phase: "Submitted", signature, detail });
       setState({ phase: "Confirming", signature, detail });
-      const confirmed = await connection.confirmTransaction(
+      const confirmed = await confirmByPolling(
+        connection,
         { signature, ...latest },
         "confirmed",
       );

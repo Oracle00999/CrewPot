@@ -9,10 +9,10 @@ If the round is not authorized before its deadline, contributors can reclaim the
 ## Current status
 
 - Implemented: five Anchor instructions, fixed membership, token vaults, approvals, payouts, refunds, wallet integration, pot creation/review, dashboard, pot details, transaction feedback, Explorer links, responsive styles, and SVG branding.
-- Verified: 55 compiled-program LiteSVM tests; 19 amount and UI-state tests; TypeScript; production frontend build; local-validator funding/payout/refund lifecycle with balance assertions and transaction signatures.
+- Verified: 55 compiled-program LiteSVM tests; 23 amount, UI-state, and transaction-confirmation tests; TypeScript; production frontend build; local-validator funding/payout/refund lifecycle with balance assertions and transaction signatures.
 - Local preview for this session: **http://127.0.0.1:3002**. The development server selects another port if the requested port is occupied.
-- Local program: `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`.
-- Devnet: not deployed. The public faucet did not fund the deployer.
+- Program (localnet and Devnet): `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`.
+- Devnet: deployed and verified. Real contributions, approvals, a 30 dUSDC payout, and an exact refund succeeded; early and duplicate attempts failed with the expected contract error codes. See [Devnet evidence](docs/devnet-verification.json).
 - GitHub and public frontend: deferred at the developer’s request.
 - Browser visual QA and wallet-extension signing: not verified; browser-control services were unavailable.
 - Demo video and screenshots: pending. No fabricated transaction evidence or screenshots are included.
@@ -133,7 +133,9 @@ SOLANA_RPC_URL=http://127.0.0.1:8899 npm run demo:verify
 
 ## Deployment and demo
 
-See [deployment](docs/deployment.md) for Devnet and future hosting steps, and [demo script](docs/demo-script.md) for the two-minute presentation. Public demo URL, GitHub repository, Devnet program confirmation, and video URL remain pending.
+The running local preview now connects to **Devnet**, using mint `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn`. [View the deployed program](https://explorer.solana.com/address/CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba?cluster=devnet). The ignored `.env.localnet` preserves the previous local configuration.
+
+See [deployment](docs/deployment.md) for Devnet and future hosting steps, and [demo script](docs/demo-script.md) for the two-minute presentation. Public demo URL, GitHub repository, and video URL remain pending. Devnet verification is complete.
 
 Brand assets are in `public/branding/`: standalone marks, horizontal/stacked logos for light and dark backgrounds, and an SVG favicon.
 

@@ -1,7 +1,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
-import { Connection, Keypair } from "@solana/web3.js";
+import { Keypair } from "@solana/web3.js";
+import { HttpConfirmationConnection } from "../lib/confirmation";
 export const endpoint =
   process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
 export const local = /^https?:\/\/(127\.0\.0\.1|localhost)(:|\/|$)/.test(
@@ -14,7 +15,7 @@ export const demoDir =
 export const deployerPath =
   process.env.CREWPOT_KEYPAIR_PATH ||
   path.join(homedir(), ".config", "solana", "crewpot-deployer.json");
-export const connection = new Connection(endpoint, "confirmed");
+export const connection = new HttpConfirmationConnection(endpoint, "confirmed");
 export function loadKey(filename: string, create = false): Keypair {
   if (!existsSync(filename)) {
     if (!create)

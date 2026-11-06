@@ -1,0 +1,106 @@
+{
+  "network": "devnet",
+  "endpoint": "https://api.devnet.solana.com",
+  "programId": "CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba",
+  "payoutPot": "7MVn4GSdD7K1EfzzdVYojzVySKYcC8DrUFz6qmKTuZs4",
+  "refundPot": "2dBFXYd9bnaHWzTzaqEDLS1pSJXMutayQJT3uP4ieY4j",
+  "checkedAt": "2026-11-06T11:41:20.467Z",
+  "signatures": [
+    {
+      "action": "Create Weekend Gaming Fund",
+      "signature": "vnyQ8fdTniJKYbxxWADNtbypUnaLoRee415kAznGirVo5F1M5PVTRUKfW5jLEwDqywPK2sKNTBL5L24rfEv98Fu"
+    },
+    {
+      "action": "Contribution 1",
+      "signature": "4yenFq5C6X1NShzzCsoDCBVixZvQAbTSXSMPR2EaQ6vc8V5sRAgK6eBLj75CSFKBZvUkkn6qRPtjrZT29N8KJVjt"
+    },
+    {
+      "action": "Contribution 2",
+      "signature": "5brhDkGvHKz6kn2Dodayj39iUh5VaLdwf9bBrm8exhMU5ZkZD2CH8DzjfUxBi9TgEYDau2bUp4LKSNQZzbRdYTQG"
+    },
+    {
+      "action": "Contribution 3",
+      "signature": "2UhXyrBV4t2TZr4whcMY2JtTduMzu2hzkJW45WYKw1hmWHR3tzxF58afDSKLyoChmjcVEkedKcFH8uphYWyFgFFe"
+    },
+    {
+      "action": "Approval 1",
+      "signature": "e1xzNei7CP5Z6obnYYmgi6SD85eAKnEg5ca8u7LHx9WT4ws2dLNAsWTT8dXHqj14tsMPQmYJteijFkPqrhcsvdp"
+    },
+    {
+      "action": "Approval 2",
+      "signature": "44d1CnXAL3m5DQb7t5aSGN8qGmgy4fLQ1oG4y3eaWL9kR7px2Y5YSeCzXusqz2wBmgRZnVDzUdq73dtn8YvMPi6F"
+    },
+    {
+      "action": "Release payout",
+      "signature": "3ykfdHAzQ4XovcToFwsa1mPmbgJtzTqtMx1pfeBoSmKbK4WsMHtLFJaci8FCrR7Cb9DLhUaxgttmJhYPNHd8KdpH"
+    },
+    {
+      "action": "Create Refund Protection Demo",
+      "signature": "42aPXD3sfiEm7QEMuTi4M3N1nWeWGmy8txKHW7FQvdsyiRr38rnuqFe13T3wCoE3rHkrL2azroqyyE7xjtbP1z3v"
+    },
+    {
+      "action": "Refund demo contribution",
+      "signature": "nfQtC48bb73NzbjvHS1Gxj3ugLYZYqHRYBEVg6f64uxtpnwmN6JuvNJCrzyz6KJdZ1KjH7uPxGFsQieh5ZPrHbF"
+    },
+    {
+      "action": "Claim refund",
+      "signature": "5ReiiRRVZA2jRTtuXugegYwuRJeP2Kxgr9Je4SAZa3gPzLbWuw66KbGBgPVzQqj8uV3kHfhrA8NLCYfCVBV7qw3Z"
+    }
+  ],
+  "assertions": [
+    "early payout rejected",
+    "exact deposits",
+    "majority authorizes",
+    "exact recipient balance delta",
+    "vault empty after release",
+    "double payout rejected",
+    "early refund rejected",
+    "exact refund",
+    "double refund rejected"
+  ],
+  "deploymentSignature": "4PFUPHqxsAokNxaZLseP33mxM1NqLaepvAe52VZjJ5CgRvK96HvdmKGbrfP8vxycW8tMcQH39bs5W31c2KGKocR3",
+  "binarySha256": "39aeb5f1d54a907136c5acf371b5092851bf7199a427d5cf7c15db3bb2a5b3b8",
+  "deployedBinaryMatchesLocal": true,
+  "confirmations": [
+    {
+      "signature": "vnyQ8fdTniJKYbxxWADNtbypUnaLoRee415kAznGirVo5F1M5PVTRUKfW5jLEwDqywPK2sKNTBL5L24rfEv98Fu",
+      "status": "finalized"
+    },
+    {
+      "signature": "4yenFq5C6X1NShzzCsoDCBVixZvQAbTSXSMPR2EaQ6vc8V5sRAgK6eBLj75CSFKBZvUkkn6qRPtjrZT29N8KJVjt",
+      "status": "finalized"
+    },
+    {
+      "signature": "5brhDkGvHKz6kn2Dodayj39iUh5VaLdwf9bBrm8exhMU5ZkZD2CH8DzjfUxBi9TgEYDau2bUp4LKSNQZzbRdYTQG",
+      "status": "finalized"
+    },
+    {
+      "signature": "2UhXyrBV4t2TZr4whcMY2JtTduMzu2hzkJW45WYKw1hmWHR3tzxF58afDSKLyoChmjcVEkedKcFH8uphYWyFgFFe",
+      "status": "finalized"
+    },
+    {
+      "signature": "e1xzNei7CP5Z6obnYYmgi6SD85eAKnEg5ca8u7LHx9WT4ws2dLNAsWTT8dXHqj14tsMPQmYJteijFkPqrhcsvdp",
+      "status": "finalized"
+    },
+    {
+      "signature": "44d1CnXAL3m5DQb7t5aSGN8qGmgy4fLQ1oG4y3eaWL9kR7px2Y5YSeCzXusqz2wBmgRZnVDzUdq73dtn8YvMPi6F",
+      "status": "finalized"
+    },
+    {
+      "signature": "3ykfdHAzQ4XovcToFwsa1mPmbgJtzTqtMx1pfeBoSmKbK4WsMHtLFJaci8FCrR7Cb9DLhUaxgttmJhYPNHd8KdpH",
+      "status": "finalized"
+    },
+    {
+      "signature": "42aPXD3sfiEm7QEMuTi4M3N1nWeWGmy8txKHW7FQvdsyiRr38rnuqFe13T3wCoE3rHkrL2azroqyyE7xjtbP1z3v",
+      "status": "finalized"
+    },
+    {
+      "signature": "nfQtC48bb73NzbjvHS1Gxj3ugLYZYqHRYBEVg6f64uxtpnwmN6JuvNJCrzyz6KJdZ1KjH7uPxGFsQieh5ZPrHbF",
+      "status": "finalized"
+    },
+    {
+      "signature": "5ReiiRRVZA2jRTtuXugegYwuRJeP2Kxgr9Je4SAZa3gPzLbWuw66KbGBgPVzQqj8uV3kHfhrA8NLCYfCVBV7qw3Z",
+      "status": "finalized"
+    }
+  ]
+}

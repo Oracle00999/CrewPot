@@ -4,9 +4,9 @@ GitHub and Vercel publication are currently deferred by the developer. Local dev
 
 ## Devnet
 
-The intended program ID is `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`. It is currently deployed only on the local validator.
+The deployed program ID is `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`. It is deployed on Devnet and verified byte-for-byte against the tested binary. Deployment signature: `4PFUPHqxsAokNxaZLseP33mxM1NqLaepvAe52VZjJ5CgRvK96HvdmKGbrfP8vxycW8tMcQH39bs5W31c2KGKocR3`.
 
-The deployer public address is `BE695N3pdm6Zn5QZdxWzB8JLUocDsQsS23tm1ZVzgVYw`. Its private key is stored outside the repository at `~/.config/solana/crewpot-deployer.json`. The faucet request failed during setup. Obtain **Devnet SOL only** from https://faucet.solana.com before retrying. Do not transfer real SOL.
+The deployer public address is `BE695N3pdm6Zn5QZdxWzB8JLUocDsQsS23tm1ZVzgVYw`. Its private key is stored outside the repository at `~/.config/solana/crewpot-deployer.json`. The developer funded it with 2.5 Devnet SOL, enabling deployment and demo setup. Use **Devnet SOL only** for future fees; do not transfer real SOL.
 
 ```sh
 npm run contract:build
@@ -14,7 +14,7 @@ npm run contract:test
 npm run demo:setup
 solana program deploy --url devnet \
   --keypair ~/.config/solana/crewpot-deployer.json \
-  --program-id target/deploy/crewpot-keypair.json target/deploy/crewpot.so
+  --program-id target/deploy/crewpot-keypair.json --use-tpu-client target/deploy/crewpot.so
 npm run demo:verify
 ```
 
@@ -38,3 +38,9 @@ No deployment URL or remote repository has been invented. Neither platform has b
 ## Upgrade authority
 
 The local test deployment is upgradeable. Once final tests pass, decide whether to make the Devnet demo immutable or transparently retain the upgrade authority for hackathon fixes. Revocation is irreversible and is deliberately not automated in these scripts. Never describe the program as completely trustless while an upgrade authority remains.
+
+## Verified Devnet run
+
+Demo mint: `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn`. All ten transaction signatures and balance assertions are recorded in `docs/devnet-verification.json`. The deployed binary checksum also appears in that report.
+
+The public RPC WebSocket returned HTTP 503, so the application and scripts now confirm using HTTP signature-status polling. This path does not resubmit transactions. The RPC upload transport hit connection rate limits; resuming the preserved deployment buffer with `--use-tpu-client` completed the upload. Avoid running setup and deployment concurrently against the public RPC.

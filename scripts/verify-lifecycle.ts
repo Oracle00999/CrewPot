@@ -45,8 +45,21 @@ async function main() {
     signatures.push({ action, signature });
     console.log(action, signature);
   }
-  async function rejected(action: string, fn: () => Promise<unknown>) {
-    await assert.rejects(fn);
+  async function rejected(
+    action: string,
+    code: string,
+    fn: () => Promise<unknown>,
+  ) {
+    await assert.rejects(fn, (error: unknown) => {
+      const e = error as {
+        error?: { errorCode?: { code?: string } };
+        logs?: string[];
+      };
+      return (
+        e.error?.errorCode?.code === code ||
+        Boolean(e.logs?.some((log) => log.includes(`Error Code: ${code}.`)))
+      );
+    });
     console.log(`PASS: ${action} rejected`);
   }
   async function time() {
@@ -116,7 +129,7 @@ async function main() {
         tokenProgram: TOKEN_PROGRAM_ID,
       })
       .rpc();
-  await rejected("Payout before approval", release);
+  await rejected("Payout before approval", "NotAuthorized", release);
   for (let i = 0; i < 3; i++) await record(`Contribution ${i + 1}`, deposit(i));
   assert.equal(
     (await getAccount(connection, success.vault)).amount,
@@ -137,7 +150,7 @@ async function main() {
     3n * amount,
   );
   assert.equal((await getAccount(connection, success.vault)).amount, 0n);
-  await rejected("Double payout", release);
+  await rejected("Double payout", "AlreadyReleased", release);
   const failed = await create("Refund Protection Demo", 30);
   const beforeRefund = (await getAccount(connection, source(1))).amount;
   await record("Refund demo contribution", deposit(1, failed));
@@ -153,12 +166,12 @@ async function main() {
         tokenProgram: TOKEN_PROGRAM_ID,
       })
       .rpc();
-  await rejected("Early refund", refund);
+  await rejected("Early refund", "RefundNotAvailable", refund);
   while ((await time()) < failed.deadline)
     await new Promise((resolve) => setTimeout(resolve, 1500));
   await record("Claim refund", refund());
   assert.equal((await getAccount(connection, source(1))).amount, beforeRefund);
-  await rejected("Double refund", refund);
+  await rejected("Double refund", "AlreadyRefunded", refund);
   const report = {
     network,
     endpoint: connection.rpcEndpoint,
