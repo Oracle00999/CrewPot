@@ -23,6 +23,8 @@ Install recording tools outside the project:
 ```sh
 npm install --prefix /private/tmp/crewpot-video-tools playwright ffmpeg-static
 node /private/tmp/crewpot-video-tools/node_modules/playwright/cli.js install ffmpeg
+python3 -m venv /private/tmp/crewpot-voice-tools
+/private/tmp/crewpot-voice-tools/bin/pip install edge-tts==7.3.1
 npm run build
 npm run start -- --port 3003
 ```
@@ -34,8 +36,14 @@ npm run demo:prepare
 CREWPOT_DEMO_URL=http://127.0.0.1:3003 CREWPOT_DEMO_OUTPUT=artifacts/demo/final node scripts/record-demo.mjs
 ```
 
-Use the stable production server during recording: development hot reloads can interrupt footage. Google Chrome must be installed. `say` uses the macOS Samantha voice; this is synthetic narration, not a recording or imitation of the project owner. `CREWPOT_VIDEO_TOOLS` can override the isolated node_modules path, and `CREWPOT_DEMO_URL` can override the local app address. `CREWPOT_DEMO_OUTPUT` selects a separate take directory.
+Use the stable production server during recording: development hot reloads can interrupt footage. Google Chrome must be installed. Narration uses the Andrew multilingual neural voice through `edge-tts`. The older macOS Samantha voice was rejected and is no longer the recorder default. This is synthetic narration, not a recording or imitation of the project owner. `CREWPOT_VIDEO_TOOLS` can override the isolated node_modules path, and `CREWPOT_DEMO_URL` can override the local app address. `CREWPOT_DEMO_OUTPUT` selects a separate take directory.
 
 The recorder resumes completed numbered clips when rerun. To create an entirely new take, preserve the existing output directory under a different name and archive the external public `recording.json` before staging fresh pots. Never delete or publish wallet private key files. A single member contribution or approval can also be driven with `npm run demo:scene -- fund 1` or `npm run demo:scene -- approve 1`.
 
 Public hosting, source publishing, and video upload remain deferred. A local MP4 does not itself complete a public submission.
+
+## Replace narration without recording again
+
+Run `/private/tmp/crewpot-voice-tools/bin/python scripts/revoice-demo.py`. This rewrites the lines for conversational delivery, generates neural audio with service-timed subtitles, checks every line fits its scene, normalizes loudness, and copies the existing video streams without re-encoding. Generated replacement files are in `artifacts/demo/final/neural/`.
+
+`CREWPOT_NARRATOR` selects the voice and `CREWPOT_EDGE_TTS` selects the CLI path. The narration text is sent to the online speech service; wallet material is never used by this step. The new audio is checked before replacing the canonical delivery file.

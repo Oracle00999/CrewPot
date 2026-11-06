@@ -66,14 +66,18 @@
     }
   ],
   "video": {
-    "durationSeconds": 120.05,
+    "durationSeconds": 120.02,
     "resolution": "1920x1080",
     "videoCodec": "H.264",
     "audioCodec": "AAC",
-    "audioPeakDb": -1.7,
+    "audioPeakDb": -1.4,
     "fullyDecoded": true,
     "captionContinuitySamplesPassed": 120,
-    "bytes": 3384669,
-    "sha256": "7ea4cde1f4069e152b284bd99892656ee80b36b8ce2fb539b79ff63934fe4d47"
+    "bytes": 3989372,
+    "sha256": "081ae9170a994aa91ecd1163efdc8e3c0492df20e603e7daa3ad3b32c4d86589",
+    "neuralVoice": "en-US-AndrewMultilingualNeural",
+    "originalVideoStreamPreserved": true,
+    "videoStreamHash": "SHA256=cfb4d995edf11d0470bb2431e6659b66f18ba3a1025615a4341204ce7930cf40",
+    "allNarrationFitsWithoutCutting": true
   }
 }

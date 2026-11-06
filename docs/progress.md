@@ -62,3 +62,11 @@ Node 24.21.0, npm 11.19.0, Rust/Cargo 1.99.1, Anchor 1.2.2, Solana CLI/validator
 - Captured actual app states: 0 → 10 → 20 → 30 dUSDC, one approval, majority authorization, completed payout, and claimed refund.
 - Exact payout/refund balance changes checked; all ten scene transactions independently finalized on Devnet. See `docs/demo-video-verification.json`.
 - Recording scripts and production instructions are reproducible; footage contains no wallet private keys or fabricated signing prompts.
+
+## Narration revised
+
+- Replaced the rejected macOS Samantha narration with the Andrew multilingual neural voice.
+- Rewrote the lines for conversational delivery; every line fits its scene without clipping.
+- Original video stream preserved exactly; only the narration and subtitles changed.
+- Canonical video updated; explicit revision is `artifacts/demo/final/CrewPot-demo-natural.mp4`.
+- Recorder now defaults to neural speech and never falls back to the old Mac voice.
