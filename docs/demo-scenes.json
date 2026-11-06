@@ -1,0 +1,61 @@
+{
+  "network": "devnet",
+  "programId": "CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba",
+  "preparedAt": "2026-11-06T17:21:44.380Z",
+  "signatures": [
+    {
+      "action": "Create payout scene",
+      "signature": "YzqxRTQWtS2haoWz3iF7NSvM3JLFaxLpRky3pcxxccnTd16D4tUKccJSLXRXLuUCYsCVwqYqiNS42WPBTSUt7Fv"
+    },
+    {
+      "action": "Create refund scene",
+      "signature": "3ZEx21LgCLaRx6z2p8v78dBxDTjGSJmNRiGVVgWUibLoyUCryFCdEnnf7bbycGH7cfH6zbtCEZZqmVPSyZBHxfkK"
+    },
+    {
+      "action": "Member 2 contributes",
+      "signature": "3jXFhKWJozHTEAG66ftsL7Uto9MzyWt9oMvuueULAekQgSkXX3CgXi5kQtPNZgyJkz94PfoEyTMovkXWL8S9mrgB"
+    }
+  ],
+  "payout": {
+    "address": "9PV3CgmpHuvSm2wWWsrnSLSxKXKfPJNcLJUrmMGyVkuR",
+    "deadline": 1794158505,
+    "potId": "1793985704382"
+  },
+  "refund": {
+    "address": "3zBuiByK9h5WmwCZHKAVBY1gHW8RPSYGMrgR5GGvf76S",
+    "deadline": 1793985753,
+    "potId": "1793985707630"
+  },
+  "scenes": [
+    {
+      "name": "payout",
+      "url": "http://127.0.0.1:3002/pots/9PV3CgmpHuvSm2wWWsrnSLSxKXKfPJNcLJUrmMGyVkuR",
+      "deadline": "2026-11-08T17:21:45.000Z",
+      "expired": false,
+      "funded": 0,
+      "approvals": 0,
+      "released": false,
+      "refunded": [
+        false,
+        false,
+        false
+      ],
+      "vaultBaseUnits": "0"
+    },
+    {
+      "name": "refund",
+      "url": "http://127.0.0.1:3002/pots/3zBuiByK9h5WmwCZHKAVBY1gHW8RPSYGMrgR5GGvf76S",
+      "deadline": "2026-11-06T17:22:33.000Z",
+      "expired": true,
+      "funded": 1,
+      "approvals": 0,
+      "released": false,
+      "refunded": [
+        false,
+        false,
+        false
+      ],
+      "vaultBaseUnits": "10000000"
+    }
+  ]
+}

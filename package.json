@@ -11,7 +11,9 @@
     "contract:build": "anchor build && node scripts/sync-idl.mjs",
     "contract:test": "cargo test -p crewpot",
     "demo:setup": "tsx scripts/setup-demo.ts",
-    "demo:verify": "tsx scripts/verify-lifecycle.ts"
+    "demo:verify": "tsx scripts/verify-lifecycle.ts",
+    "demo:prepare": "tsx scripts/prepare-demo.ts prepare",
+    "demo:scene": "tsx scripts/prepare-demo.ts"
   },
   "dependencies": {
     "@anchor-lang/core": "1.2.2",
