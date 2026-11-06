@@ -1,0 +1,114 @@
+{
+  "recordedAt": "2026-11-06T17:52:13.666Z",
+  "durationSeconds": 120,
+  "disclosure": "Real app captured in Chrome. Transactions signed by local demo scripts on Devnet. Confirmation waits cut. Synthetic Samantha narration. No browser wallet signing is depicted.",
+  "shots": [
+    {
+      "id": "01-intro",
+      "seconds": 12,
+      "title": "CrewPot \u00b7 Solana Hackathon",
+      "narration": "Meet CrewPot. Friends pool money for shared plans, with clear rules enforced on Solana. This demonstration uses real Devnet transactions and valueless demo tokens.",
+      "rawVideo": "raw/page@a8d9678b9c32330ab73bf62acd8059a7.webm",
+      "trimStartSeconds": 5.199999999999998,
+      "screenshot": "01-intro.png",
+      "video": "01-intro.mp4"
+    },
+    {
+      "id": "02-agreement",
+      "seconds": 18,
+      "title": "A prepared pot. A fixed agreement.",
+      "narration": "This prepared weekend gaming pot has three members. Each commits ten demo USDC, for a target of thirty. Two member approvals are required, and the recipient and deadline are fixed at creation. The browser reads the real on chain agreement.",
+      "rawVideo": "raw/page@c281772c8fb43a954b66ed5290d50900.webm",
+      "trimStartSeconds": 13.440000000000001,
+      "screenshot": "02-agreement.png",
+      "video": "02-agreement.mp4"
+    },
+    {
+      "id": "03-member-one",
+      "seconds": 7,
+      "title": "Member 1 contributes",
+      "narration": "The first member contributes ten. The vault now holds their share.",
+      "signature": "5BWqZ2xjkFsco4BBVb7F2v8FWFntGgcY7T7DZVWnUNJDJ7b5aUXGLrzZGEoMip7n8143y5Bq2XAfdRpMyy6XM3ag",
+      "rawVideo": "raw/page@8d97540fd93e00a8b96f7ffffa01aad7.webm",
+      "trimStartSeconds": 8.48,
+      "screenshot": "03-member-one.png",
+      "video": "03-member-one.mp4"
+    },
+    {
+      "id": "04-member-two",
+      "seconds": 7,
+      "title": "Member 2 contributes",
+      "narration": "The second member contributes. Progress updates from the confirmed on chain state.",
+      "signature": "3GcQpctA3AxDu8BCRDZKhZ5pVLrGwYeHnUukLHUZUu6LZoC6GD4p93fBkQthieQTCMJbvTubEfGL2ks53VA9Symn",
+      "rawVideo": "raw/page@806528f4366cd8f8b7d1a7d0cf1651bb.webm",
+      "trimStartSeconds": 16.44,
+      "screenshot": "04-member-two.png",
+      "video": "04-member-two.mp4"
+    },
+    {
+      "id": "05-member-three",
+      "seconds": 7,
+      "title": "Fully funded. Still awaiting approval.",
+      "narration": "The third contribution reaches thirty. Funding alone does not authorize the payout.",
+      "signature": "4sSLGZ2Jk9uuNUTs9jexT9YN9NeMF7PGeKod11v8Y4acvpn9ov8k6txUZYQgAn9UVZAau3VB6vw2WRZxXXSFwW7c",
+      "rawVideo": "raw/page@c665b085449a8eb86226e3cd9442b8cd.webm",
+      "trimStartSeconds": 9.48,
+      "screenshot": "05-member-three.png",
+      "video": "05-member-three.mp4"
+    },
+    {
+      "id": "06-first-vote",
+      "seconds": 8,
+      "title": "One approval. Payout stays locked.",
+      "narration": "A contributing member approves. One vote is not enough. The funds remain in the vault.",
+      "signature": "9CsjBiF8ek4sASgFU8bykjaLUqyXNkhCnTdaheFVNYXiG3U8W3ewvR34jrAvgbJk8DqzBh8LPPp3GL5aiJuQE9f",
+      "rawVideo": "raw/page@a1f6cdaa016eb9acceee1a40191f791c.webm",
+      "trimStartSeconds": 11.36,
+      "screenshot": "06-first-vote.png",
+      "video": "06-first-vote.mp4"
+    },
+    {
+      "id": "07-majority",
+      "seconds": 12,
+      "title": "The majority authorizes the payout",
+      "narration": "The second approval reaches the required majority. The crew has authorized the payout. Anyone may finalize it, but the agreed recipient cannot be changed.",
+      "signature": "3w7NmpGBfVCzDmC2cFvBjFF9HNK3K96ziMHEhu5ZP5TFFMsUBsmcELY75DCvycHvY142jg2vSyoT5fsCgPc47KeZ",
+      "rawVideo": "raw/page@b64a40da3300138d80a7c71277b434bb.webm",
+      "trimStartSeconds": 9.68,
+      "screenshot": "07-majority.png",
+      "video": "07-majority.mp4"
+    },
+    {
+      "id": "08-payout",
+      "seconds": 20,
+      "title": "30 dUSDC released to the agreed recipient",
+      "narration": "The payout is now finalized. The script verifies an exact thirty demo USDC increase in the recipient account, and the app shows the empty vault and completed agreement. The activity links point to real confirmed transactions on Solana Explorer.",
+      "signature": "2m8usgqo2FBLtbTgLYiXmPyib1kvYc8hwp4RsHfJsKrynbEzv2ThuZBd5pQCrnFbNv2r4pnkBpcE9dWGoDcBQ1gU",
+      "rawVideo": "raw/page@b991532632e2b28679ceba4e07c0a7f1.webm",
+      "trimStartSeconds": 8.64,
+      "screenshot": "08-payout.png",
+      "video": "08-payout.mp4"
+    },
+    {
+      "id": "09-refund",
+      "seconds": 23,
+      "title": "Plans changed. Your share is yours.",
+      "narration": "Here is a separate pot whose deadline passed without authorization. Only one member had contributed. That contributor claims their own ten demo USDC back, without waiting for the creator. The recording script checks the exact balance change. The member row now shows refunded, and the vault is empty.",
+      "signature": "3UVMdgPoA7z48KTD7FN2xjp51iy7K93aEsaPrjADPmKEN8qw11i7mwoKhPsvuxbUyBTfyQvuLkpGLiiWsbyqpV6a",
+      "rawVideo": "raw/page@12808b3b906044f577e859d4837724c8.webm",
+      "trimStartSeconds": 14.84,
+      "screenshot": "09-refund.png",
+      "video": "09-refund.mp4"
+    },
+    {
+      "id": "10-close",
+      "seconds": 6,
+      "title": "Your crew. Your money. Your rules.",
+      "narration": "CrewPot. Your crew. Your money. Your rules.",
+      "rawVideo": "raw/page@60c1e197f15f9c4d08f2ca440882b031.webm",
+      "trimStartSeconds": 12,
+      "screenshot": "10-close.png",
+      "video": "10-close.mp4"
+    }
+  ]
+}

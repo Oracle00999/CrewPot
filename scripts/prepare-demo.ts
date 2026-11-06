@@ -52,6 +52,8 @@ async function main() {
     await record(`Member ${i + 1} contributes`, program(i).methods.contribute().accountsStrict({ member: keys[i].publicKey, pot, mint, source: source(i), vault: vault(pot), tokenProgram: TOKEN_PROGRAM_ID }).rpc());
   }
   const action = process.argv[2] || "prepare";
+  const selectedMember = process.argv[3] === undefined ? undefined : Number(process.argv[3]) - 1;
+  assert.ok(selectedMember === undefined || (Number.isInteger(selectedMember) && selectedMember >= 0 && selectedMember < 3), "Member must be 1, 2, or 3");
   assert.ok(["prepare", "fund", "approve", "release", "refund", "status"].includes(action), "Use prepare, fund, approve, release, refund, or status");
   if (action === "prepare") {
     await create("payout", 172800);
@@ -61,8 +63,9 @@ async function main() {
   assert.ok(report.payout && report.refund, "Run demo:prepare first");
   const payout = new PublicKey(report.payout.address);
   const refund = new PublicKey(report.refund.address);
-  if (action === "fund") for (let i = 0; i < 3; i++) await deposit(i, payout);
+  if (action === "fund") for (const i of selectedMember === undefined ? [0, 1, 2] : [selectedMember]) await deposit(i, payout);
   if (action === "approve") for (let i = 0; i < 2; i++) {
+    if (selectedMember !== undefined && selectedMember !== i) continue;
     const state = await program(0).account.potAccount.fetch(payout);
     if (!state.members[i].approved) await record(`Member ${i + 1} approves`, program(i).methods.approvePayout().accountsStrict({ member: keys[i].publicKey, pot: payout }).rpc());
   }
@@ -81,7 +84,7 @@ async function main() {
   for (const [name, scene] of [["payout", report.payout], ["refund", report.refund]] as const) {
     const pot = new PublicKey(scene.address);
     const state = await program(0).account.potAccount.fetch(pot);
-    summary.push({ name, url: `http://127.0.0.1:3002/pots/${scene.address}`, deadline: new Date(scene.deadline * 1000).toISOString(), expired: (await clock()) >= scene.deadline, funded: state.fundedCount, approvals: state.approvalCount, released: state.released, refunded: state.members.map(m => m.refunded), vaultBaseUnits: (await getAccount(connection, vault(pot))).amount.toString() });
+    summary.push({ name, url: `${process.env.CREWPOT_DEMO_URL || "http://127.0.0.1:3002"}/pots/${scene.address}`, deadline: new Date(scene.deadline * 1000).toISOString(), expired: (await clock()) >= scene.deadline, funded: state.fundedCount, approvals: state.approvalCount, released: state.released, refunded: state.members.map(m => m.refunded), vaultBaseUnits: (await getAccount(connection, vault(pot))).amount.toString() });
   }
   writeFileSync(path.join(process.cwd(), "docs", "demo-scenes.json"), JSON.stringify({ ...report, scenes: summary }, null, 2));
   console.log(JSON.stringify(summary, null, 2));

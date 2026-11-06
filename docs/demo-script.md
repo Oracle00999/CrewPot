@@ -2,13 +2,13 @@
 
 ## Prepared scenes
 
-The real Devnet pots and creation signatures are in [demo-scenes.json](demo-scenes.json). Both scenes use the existing three demo wallets, six-decimal dUSDC, 10 dUSDC per member, and two required approvals. dUSDC has no monetary value.
+The recording has now executed the payout and refund; these addresses show the completed results. Prepare fresh scenes before another take. The real Devnet pots and creation signatures are in [demo-scenes.json](demo-scenes.json). Both scenes use the existing three demo wallets, six-decimal dUSDC, 10 dUSDC per member, and two required approvals. dUSDC has no monetary value.
 
-- Payout scene: http://127.0.0.1:3002/pots/9PV3CgmpHuvSm2wWWsrnSLSxKXKfPJNcLJUrmMGyVkuR — starts empty, ready for three contributions.
-- Refund scene: http://127.0.0.1:3002/pots/3zBuiByK9h5WmwCZHKAVBY1gHW8RPSYGMrgR5GGvf76S — member 2 deposited 10 dUSDC; refund becomes available November 6 at 6:22:33 PM WAT.
-- Payout contributions and approvals must happen before November 8 at 6:21:45 PM WAT. Prepare new scenes if recording later.
+- Payout scene: http://127.0.0.1:3003/pots/7K8xtp2STHQVYfwdLPDdYzq66RGSUJMNzDdVvxc1iDX3 — recorded from empty through three contributions, two approvals, and payout.
+- Refund scene: http://127.0.0.1:3003/pots/GxbNrPtxpwsYYdPSzeBq7crHyXWUB9ucywHfesiE4rux — member 2 deposited and reclaimed 10 dUSDC after the deadline.
+- Payout contributions and approvals must happen before November 8 at 6:44:16 PM WAT. Prepare new scenes if recording later.
 
-Start the app with `npm run dev -- --port 3002`. Keep a browser tab on each scene and another on Solana Explorer, with Devnet selected. Use 1920×1080 if available. Hide notifications and keep private key files and wallet recovery screens out of the recording.
+Use the stable production preview at `http://127.0.0.1:3003`; startup commands are in [video production](video-production.md). Keep a browser tab on each scene and another on Solana Explorer, with Devnet selected. Use 1920×1080 if available. Hide notifications and keep private key files and wallet recovery screens out of the recording.
 
 ## Shot list and narration
 
@@ -50,4 +50,4 @@ Run one command per scene and wait for confirmation. `fund` submits three contri
 
 ## Delivery status
 
-Devnet deployment and the full scripted lifecycle were previously verified. These new recording scenes are staged separately so their final payout/refund can be captured. Browser control currently reports “browser access host is unavailable”; browser-wallet interaction, screen capture, and the final video are still pending. No video has been recorded. Public hosting and GitHub publishing remain deferred by the project owner.
+Devnet deployment and the full scripted lifecycle are verified. A standalone Chrome recorder captured these scenes, with synthetic narration and explicit scripted-signing captions; see [video production](video-production.md). The original browser-control connection remains unavailable, and browser-wallet signing has not been verified. Public hosting, GitHub publishing, and video upload remain deferred.

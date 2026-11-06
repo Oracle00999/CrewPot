@@ -1,40 +1,68 @@
 {
   "network": "devnet",
   "programId": "CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba",
-  "preparedAt": "2026-11-06T17:21:44.380Z",
+  "preparedAt": "2026-11-06T17:44:15.137Z",
   "signatures": [
     {
       "action": "Create payout scene",
-      "signature": "YzqxRTQWtS2haoWz3iF7NSvM3JLFaxLpRky3pcxxccnTd16D4tUKccJSLXRXLuUCYsCVwqYqiNS42WPBTSUt7Fv"
+      "signature": "5GWvqADDFD5UV4GzZS3rF8VKtWouUPDHLa1sLgkCvjn5X9qqyEom8uHZcCVhMYC3PthVKeqfTYvLEWfoD9suv6of"
     },
     {
       "action": "Create refund scene",
-      "signature": "3ZEx21LgCLaRx6z2p8v78dBxDTjGSJmNRiGVVgWUibLoyUCryFCdEnnf7bbycGH7cfH6zbtCEZZqmVPSyZBHxfkK"
+      "signature": "3BScBCZh6neYQkZXwrFvd1MBAB7bhWgeJy1HEmfke3jL2RzQ4W5QF4cy7rmUJnkRu8cpsFz5mAsRbC8gkPBUYg4F"
     },
     {
       "action": "Member 2 contributes",
-      "signature": "3jXFhKWJozHTEAG66ftsL7Uto9MzyWt9oMvuueULAekQgSkXX3CgXi5kQtPNZgyJkz94PfoEyTMovkXWL8S9mrgB"
+      "signature": "2s1ypP9jHMEh3NL3K6f6pJ3URnoizNHTYqHCQVzRNGMbm37aBHpDWCm91V72nZZzNMHiN1vYZYbQdfwmo6Mpjzty"
+    },
+    {
+      "action": "Member 1 contributes",
+      "signature": "5BWqZ2xjkFsco4BBVb7F2v8FWFntGgcY7T7DZVWnUNJDJ7b5aUXGLrzZGEoMip7n8143y5Bq2XAfdRpMyy6XM3ag"
+    },
+    {
+      "action": "Member 2 contributes",
+      "signature": "3GcQpctA3AxDu8BCRDZKhZ5pVLrGwYeHnUukLHUZUu6LZoC6GD4p93fBkQthieQTCMJbvTubEfGL2ks53VA9Symn"
+    },
+    {
+      "action": "Member 3 contributes",
+      "signature": "4sSLGZ2Jk9uuNUTs9jexT9YN9NeMF7PGeKod11v8Y4acvpn9ov8k6txUZYQgAn9UVZAau3VB6vw2WRZxXXSFwW7c"
+    },
+    {
+      "action": "Member 1 approves",
+      "signature": "9CsjBiF8ek4sASgFU8bykjaLUqyXNkhCnTdaheFVNYXiG3U8W3ewvR34jrAvgbJk8DqzBh8LPPp3GL5aiJuQE9f"
+    },
+    {
+      "action": "Member 2 approves",
+      "signature": "3w7NmpGBfVCzDmC2cFvBjFF9HNK3K96ziMHEhu5ZP5TFFMsUBsmcELY75DCvycHvY142jg2vSyoT5fsCgPc47KeZ"
+    },
+    {
+      "action": "Release 30 dUSDC",
+      "signature": "2m8usgqo2FBLtbTgLYiXmPyib1kvYc8hwp4RsHfJsKrynbEzv2ThuZBd5pQCrnFbNv2r4pnkBpcE9dWGoDcBQ1gU"
+    },
+    {
+      "action": "Refund member 2: 10 dUSDC",
+      "signature": "3UVMdgPoA7z48KTD7FN2xjp51iy7K93aEsaPrjADPmKEN8qw11i7mwoKhPsvuxbUyBTfyQvuLkpGLiiWsbyqpV6a"
     }
   ],
   "payout": {
-    "address": "9PV3CgmpHuvSm2wWWsrnSLSxKXKfPJNcLJUrmMGyVkuR",
-    "deadline": 1794158505,
-    "potId": "1793985704382"
+    "address": "7K8xtp2STHQVYfwdLPDdYzq66RGSUJMNzDdVvxc1iDX3",
+    "deadline": 1794159856,
+    "potId": "1793987055137"
   },
   "refund": {
-    "address": "3zBuiByK9h5WmwCZHKAVBY1gHW8RPSYGMrgR5GGvf76S",
-    "deadline": 1793985753,
-    "potId": "1793985707630"
+    "address": "GxbNrPtxpwsYYdPSzeBq7crHyXWUB9ucywHfesiE4rux",
+    "deadline": 1793987108,
+    "potId": "1793987061716"
   },
   "scenes": [
     {
       "name": "payout",
-      "url": "http://127.0.0.1:3002/pots/9PV3CgmpHuvSm2wWWsrnSLSxKXKfPJNcLJUrmMGyVkuR",
-      "deadline": "2026-11-08T17:21:45.000Z",
+      "url": "http://127.0.0.1:3003/pots/7K8xtp2STHQVYfwdLPDdYzq66RGSUJMNzDdVvxc1iDX3",
+      "deadline": "2026-11-08T17:44:16.000Z",
       "expired": false,
-      "funded": 0,
-      "approvals": 0,
-      "released": false,
+      "funded": 3,
+      "approvals": 2,
+      "released": true,
       "refunded": [
         false,
         false,
@@ -44,18 +72,18 @@
     },
     {
       "name": "refund",
-      "url": "http://127.0.0.1:3002/pots/3zBuiByK9h5WmwCZHKAVBY1gHW8RPSYGMrgR5GGvf76S",
-      "deadline": "2026-11-06T17:22:33.000Z",
+      "url": "http://127.0.0.1:3003/pots/GxbNrPtxpwsYYdPSzeBq7crHyXWUB9ucywHfesiE4rux",
+      "deadline": "2026-11-06T17:45:08.000Z",
       "expired": true,
       "funded": 1,
       "approvals": 0,
       "released": false,
       "refunded": [
         false,
-        false,
+        true,
         false
       ],
-      "vaultBaseUnits": "10000000"
+      "vaultBaseUnits": "0"
     }
   ]
 }

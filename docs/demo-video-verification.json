@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-11-06T17:51:48.551Z",
+  "network": "devnet",
+  "payoutPot": "7K8xtp2STHQVYfwdLPDdYzq66RGSUJMNzDdVvxc1iDX3",
+  "refundPot": "GxbNrPtxpwsYYdPSzeBq7crHyXWUB9ucywHfesiE4rux",
+  "statuses": [
+    {
+      "action": "Create payout scene",
+      "signature": "5GWvqADDFD5UV4GzZS3rF8VKtWouUPDHLa1sLgkCvjn5X9qqyEom8uHZcCVhMYC3PthVKeqfTYvLEWfoD9suv6of",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Create refund scene",
+      "signature": "3BScBCZh6neYQkZXwrFvd1MBAB7bhWgeJy1HEmfke3jL2RzQ4W5QF4cy7rmUJnkRu8cpsFz5mAsRbC8gkPBUYg4F",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Member 2 contributes",
+      "signature": "2s1ypP9jHMEh3NL3K6f6pJ3URnoizNHTYqHCQVzRNGMbm37aBHpDWCm91V72nZZzNMHiN1vYZYbQdfwmo6Mpjzty",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Member 1 contributes",
+      "signature": "5BWqZ2xjkFsco4BBVb7F2v8FWFntGgcY7T7DZVWnUNJDJ7b5aUXGLrzZGEoMip7n8143y5Bq2XAfdRpMyy6XM3ag",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Member 2 contributes",
+      "signature": "3GcQpctA3AxDu8BCRDZKhZ5pVLrGwYeHnUukLHUZUu6LZoC6GD4p93fBkQthieQTCMJbvTubEfGL2ks53VA9Symn",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Member 3 contributes",
+      "signature": "4sSLGZ2Jk9uuNUTs9jexT9YN9NeMF7PGeKod11v8Y4acvpn9ov8k6txUZYQgAn9UVZAau3VB6vw2WRZxXXSFwW7c",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Member 1 approves",
+      "signature": "9CsjBiF8ek4sASgFU8bykjaLUqyXNkhCnTdaheFVNYXiG3U8W3ewvR34jrAvgbJk8DqzBh8LPPp3GL5aiJuQE9f",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Member 2 approves",
+      "signature": "3w7NmpGBfVCzDmC2cFvBjFF9HNK3K96ziMHEhu5ZP5TFFMsUBsmcELY75DCvycHvY142jg2vSyoT5fsCgPc47KeZ",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Release 30 dUSDC",
+      "signature": "2m8usgqo2FBLtbTgLYiXmPyib1kvYc8hwp4RsHfJsKrynbEzv2ThuZBd5pQCrnFbNv2r4pnkBpcE9dWGoDcBQ1gU",
+      "status": "finalized",
+      "error": null
+    },
+    {
+      "action": "Refund member 2: 10 dUSDC",
+      "signature": "3UVMdgPoA7z48KTD7FN2xjp51iy7K93aEsaPrjADPmKEN8qw11i7mwoKhPsvuxbUyBTfyQvuLkpGLiiWsbyqpV6a",
+      "status": "finalized",
+      "error": null
+    }
+  ],
+  "video": {
+    "durationSeconds": 120.05,
+    "resolution": "1920x1080",
+    "videoCodec": "H.264",
+    "audioCodec": "AAC",
+    "audioPeakDb": -1.7,
+    "fullyDecoded": true,
+    "captionContinuitySamplesPassed": 120,
+    "bytes": 3384669,
+    "sha256": "7ea4cde1f4069e152b284bd99892656ee80b36b8ce2fb539b79ff63934fe4d47"
+  }
+}

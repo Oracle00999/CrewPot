@@ -32,10 +32,10 @@
 ## Remaining
 
 - Devnet deployment and lifecycle verification are complete; browser-wallet verification is still pending.
-- Browser visual QA and wallet-extension signing (automation services unavailable).
+- Wallet-extension signing; pot scenes have been visually checked through standalone Chrome capture.
 - GitHub and Vercel publication deferred by developer instruction.
 - Independent security review; unresolved inherited dependency advisories.
-- Screenshots, video, final submission and event eligibility review.
+- Public video upload, final submission and event eligibility review.
 
 ## Toolchain
 
@@ -54,3 +54,11 @@ Node 24.21.0, npm 11.19.0, Rust/Cargo 1.99.1, Anchor 1.2.2, Solana CLI/validator
 - Refund pot: `/pots/2dBFXYd9bnaHWzTzaqEDLS1pSJXMutayQJT3uP4ieY4j`.
 - Evidence: `docs/devnet-verification.json`.
 - GitHub/Vercel remain deferred.
+
+## Demo video completed
+
+- Standalone Chrome recording bypassed the unavailable browser-control connection.
+- Two-minute 1920×1080 H.264/AAC video, synthetic narration, explicit scripted-signing captions, subtitles, and ten screenshots in `artifacts/demo/final/`.
+- Captured actual app states: 0 → 10 → 20 → 30 dUSDC, one approval, majority authorization, completed payout, and claimed refund.
+- Exact payout/refund balance changes checked; all ten scene transactions independently finalized on Devnet. See `docs/demo-video-verification.json`.
+- Recording scripts and production instructions are reproducible; footage contains no wallet private keys or fabricated signing prompts.

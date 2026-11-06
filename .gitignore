@@ -13,4 +13,5 @@ coverage/
 playwright-report/
 test-results/
 *.tsbuildinfo
+artifacts/demo/
 *-keypair.json

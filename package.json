@@ -13,7 +13,8 @@
     "demo:setup": "tsx scripts/setup-demo.ts",
     "demo:verify": "tsx scripts/verify-lifecycle.ts",
     "demo:prepare": "tsx scripts/prepare-demo.ts prepare",
-    "demo:scene": "tsx scripts/prepare-demo.ts"
+    "demo:scene": "tsx scripts/prepare-demo.ts",
+    "demo:record": "node scripts/record-demo.mjs"
   },
   "dependencies": {
     "@anchor-lang/core": "1.2.2",
