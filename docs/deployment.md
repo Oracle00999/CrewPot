@@ -44,3 +44,18 @@ The Devnet deployment is upgradeable. Once final tests pass, decide whether to m
 Demo mint: `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn`. All ten transaction signatures and balance assertions are recorded in `docs/devnet-verification.json`. The deployed binary checksum also appears in that report.
 
 The public RPC WebSocket returned HTTP 503, so the application and scripts now confirm using HTTP signature-status polling. This path does not resubmit transactions. The RPC upload transport hit connection rate limits; resuming the preserved deployment buffer with `--use-tpu-client` completed the upload. Avoid running setup and deployment concurrently against the public RPC.
+
+## Vercel configuration
+
+The repository includes `vercel.json` with the Next.js framework preset, `npm ci` installation, and `npm run build` (Webpack). Node.js is pinned to 24.x in `package.json`. `.vercelignore` excludes local notes, environment files, keys, recording artifacts, Rust build output, and contract tooling from frontend uploads.
+
+Configure these public values for Production builds:
+
+| Name | Value |
+| --- | --- |
+| `NEXT_PUBLIC_SOLANA_CLUSTER` | `devnet` |
+| `NEXT_PUBLIC_SOLANA_RPC_URL` | `https://api.devnet.solana.com` |
+| `NEXT_PUBLIC_PROGRAM_ID` | `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba` |
+| `NEXT_PUBLIC_DEMO_MINT` | `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn` |
+
+No deployer key, mint authority, or demo-wallet private key belongs in the hosting environment. After deployment, verify the landing page and a direct pot URL without logging into Vercel. The submission link must be the public production application URL.
