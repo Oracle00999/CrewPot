@@ -1,0 +1,42 @@
+{
+  "url": "https://crewpot.vercel.app",
+  "deploymentId": "dpl_98FSa7uPizPS8LFdTX2ZLyU8U4EU",
+  "checkedAt": "2026-11-07T07:24:04.730Z",
+  "unauthenticated": true,
+  "pages": [
+    {
+      "url": "https://crewpot.vercel.app/",
+      "status": 200
+    },
+    {
+      "url": "https://crewpot.vercel.app/dashboard",
+      "status": 200
+    },
+    {
+      "url": "https://crewpot.vercel.app/pots/new",
+      "status": 200
+    },
+    {
+      "url": "https://crewpot.vercel.app/pots/7K8xtp2STHQVYfwdLPDdYzq66RGSUJMNzDdVvxc1iDX3",
+      "chainDataLoaded": true,
+      "vaultBalance": "0 dUSDC"
+    },
+    {
+      "url": "https://crewpot.vercel.app/pots/GxbNrPtxpwsYYdPSzeBq7crHyXWUB9ucywHfesiE4rux",
+      "chainDataLoaded": true,
+      "vaultBalance": "0 dUSDC"
+    }
+  ],
+  "mobileViewports": [
+    {
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "viewport": 768,
+      "content": 768
+    }
+  ],
+  "walletSigningVerified": false,
+  "browserErrors": []
+}

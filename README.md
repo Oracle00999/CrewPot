@@ -2,6 +2,8 @@
 
 **Your crew. Your money. Your rules.**
 
+**Live Devnet demo:** https://crewpot.vercel.app
+
 CrewPot lets a small group pool tokens for a shared goal without giving one member unilateral access to the vault. Everyone agrees on an equal contribution, a fixed recipient, a deadline, and a strict-majority approval threshold. The Solana program enforces that agreement.
 
 If the round is not authorized before its deadline, contributors can reclaim their own deposits. After authorization, anyone can finalize payment to the agreed recipient—even after the deadline.
@@ -12,8 +14,8 @@ If the round is not authorized before its deadline, contributors can reclaim the
 - Verified: 55 compiled-program LiteSVM tests; 23 amount, UI-state, and transaction-confirmation tests; TypeScript; production frontend build; local-validator funding/payout/refund lifecycle with balance assertions and transaction signatures.
 - Program (localnet and Devnet): `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`.
 - Devnet: deployed and verified. Real contributions, approvals, a 30 dUSDC payout, and an exact refund succeeded; early and duplicate attempts failed with the expected contract error codes. See [Devnet evidence](docs/devnet-verification.json).
-- Source: [Oracle00999/CrewPot](https://github.com/Oracle00999/CrewPot). Public frontend hosting remains pending.
-- Pot-scene visual QA: verified in captured Chrome footage. Wallet-extension signing remains unverified; demo transactions are signed by local scripts.
+- Source: [Oracle00999/CrewPot](https://github.com/Oracle00999/CrewPot). Frontend: [crewpot.vercel.app](https://crewpot.vercel.app).
+- Public-site verification: homepage, dashboard, creation route, live payout/refund data, and mobile/tablet layouts passed in a clean browser. See [frontend verification](docs/frontend-verification.json). Wallet-extension signing remains unverified; recorded demo transactions are signed by local scripts.
 - Narrated two-minute 1080p demo and ten real browser screenshots: generated locally in `artifacts/demo/final/`. See [video production](docs/video-production.md) and [finalized transaction evidence](docs/demo-video-verification.json). Public video upload remains pending.
 
 This is a Devnet/localnet hackathon prototype, not an audited production system. **Demo USDC (dUSDC) has no real monetary value and is not Circle-issued USDC.**
@@ -148,7 +150,7 @@ SOLANA_RPC_URL=http://127.0.0.1:8899 npm run demo:verify
 
 The default frontend configuration connects to **Devnet**, using mint `6aZYZyWDDDfYQr6bBkLYBhXvHXjEMQ16oWwoDLTMUxsn`. [View the deployed program](https://explorer.solana.com/address/CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba?cluster=devnet).
 
-See [deployment](docs/deployment.md) for Devnet and future hosting steps, and [demo script](docs/demo-script.md) for the two-minute presentation. Public app hosting and video upload remain pending. Devnet verification is complete.
+See [deployment](docs/deployment.md) for Devnet and future hosting steps, and [demo script](docs/demo-script.md) for the two-minute presentation. The public application is live at [crewpot.vercel.app](https://crewpot.vercel.app). Video upload remains pending. Devnet verification is complete.
 
 Brand assets are in `public/branding/`: standalone marks, horizontal/stacked logos for light and dark backgrounds, and an SVG favicon.
 

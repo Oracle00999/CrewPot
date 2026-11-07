@@ -1,6 +1,6 @@
 # Deployment
 
-Source repository: https://github.com/Oracle00999/CrewPot. Frontend hosting has not been configured.
+Source repository: https://github.com/Oracle00999/CrewPot. Public frontend: https://crewpot.vercel.app.
 
 ## Devnet
 
@@ -24,7 +24,7 @@ After a successful verification run, copy only the public `verification.json` re
 
 Update the frontend environment to the Devnet RPC, cluster, program, and mint from the Devnet manifest, then rebuild. Never publish the localnet build as a Devnet application.
 
-## Frontend when publication resumes
+## Frontend on Vercel
 
 1. Log into the intended GitHub and Vercel accounts locally; do not paste tokens into chat.
 2. Verify the source tree excludes all secrets, `.env.local`, ledgers, and private keys.
@@ -33,7 +33,7 @@ Update the frontend environment to the Devnet RPC, cluster, program, and mint fr
 5. Open the public URL and verify wallet connection, direct pot links, create/contribute/approve/release/refund, exact balances, and Explorer links.
 6. Add the actual public URL and repository to the README.
 
-The source repository is configured; there is no public frontend URL yet.
+The production frontend is https://crewpot.vercel.app. It was deployed through Vercel CLI to the dedicated `crewpot` project. Production and preview environments use the public Devnet values below. Git-based automatic deployment has not been configured; use `vercel deploy --prod --yes` from the linked checkout for updates.
 
 ## Upgrade authority
 
