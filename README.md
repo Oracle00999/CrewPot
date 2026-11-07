@@ -11,11 +11,11 @@ If the round is not authorized before its deadline, contributors can reclaim the
 ## Current status
 
 - Implemented: five Anchor instructions, fixed membership, token vaults, approvals, payouts, refunds, wallet integration, pot creation/review, dashboard, pot details, transaction feedback, Explorer links, responsive styles, and SVG branding.
-- Verified: 55 compiled-program LiteSVM tests; 23 amount, UI-state, and transaction-confirmation tests; TypeScript; production frontend build; local-validator funding/payout/refund lifecycle with balance assertions and transaction signatures.
+- Verified: 55 compiled-program LiteSVM tests; 30 amount, UI-state, confirmation, and wallet-transport tests; TypeScript; production frontend build; local-validator funding/payout/refund lifecycle with balance assertions and transaction signatures.
 - Program (localnet and Devnet): `CV7eUQCnNZ9wYereuWFMG98sTDNp5k4QsSPF5rzqUgba`.
 - Devnet: deployed and verified. Real contributions, approvals, a 30 dUSDC payout, and an exact refund succeeded; early and duplicate attempts failed with the expected contract error codes. See [Devnet evidence](docs/devnet-verification.json).
 - Source: [Oracle00999/CrewPot](https://github.com/Oracle00999/CrewPot). Frontend: [crewpot.vercel.app](https://crewpot.vercel.app).
-- Public-site verification: homepage, dashboard, creation route, live payout/refund data, and mobile/tablet layouts passed in a clean browser. See [frontend verification](docs/frontend-verification.json). Wallet-extension signing remains unverified; recorded demo transactions are signed by local scripts.
+- Public-site verification: homepage, dashboard, creation route, live payout/refund data, and mobile/tablet layouts passed in a clean browser. See [frontend verification](docs/frontend-verification.json). Native mobile signing transport is regression-tested and verified with dedicated Devnet wallets; phone approval still needs an on-device retry after the compatibility fix. See [mobile wallet verification](docs/mobile-wallet-verification.json). Recorded demo transactions are signed by local scripts.
 - Narrated two-minute 1080p demo and ten real browser screenshots: generated locally in `artifacts/demo/final/`. See [video production](docs/video-production.md) and [finalized transaction evidence](docs/demo-video-verification.json). Public video upload remains pending.
 
 This is a Devnet/localnet hackathon prototype, not an audited production system. **Demo USDC (dUSDC) has no real monetary value and is not Circle-issued USDC.**

@@ -1,0 +1,36 @@
+{
+  "network": "devnet",
+  "checkedAt": "2026-11-07T15:38:14.024Z",
+  "pot": "2DHoAQpSxLRdPSUsEWXrALdcWx98axfPZfReCB8st5n5",
+  "transactionFormat": "v0",
+  "unsignedTransport": "serialize then deserialize before wallet signing",
+  "signing": "Dedicated CLI test wallets; native phone approval still requires user retry",
+  "rpcSignatureVerification": true,
+  "exactPayoutDUSDC": 2,
+  "signatures": [
+    {
+      "action": "Create v0 pot",
+      "signature": "2nAdHjgnzf6Ax8yuk64LRs5MSmhtamSwqMbtxjY2p5fC6t86b6dqvGHKZbWGyJjSvpqQHTgcdzS6uPhkGxZTDt5z"
+    },
+    {
+      "action": "v0 contribution 1",
+      "signature": "47LNf3RSBUkJrnaqNKbougKEpyVqMPBEfv74VHqAwt2mFStWSkVHwDtv4XLPJS7RqDqtoV4Spd4e32rDZS65gioX"
+    },
+    {
+      "action": "v0 contribution 2",
+      "signature": "5zTF4fjo6h2aEMHW34nsigD2MyjShX5CErjEG8vLQ8Fna5SUxmoh6zhJo4Q83k4FuFATDxuV4L4c4fyYDFJykykM"
+    },
+    {
+      "action": "v0 approval 1",
+      "signature": "3HakUrHGvHDqRUHN9MbCNoLitBgbrSVJzyQbKREABjw11GqAhk6yPC5VLpuF9qkT7eC6kPdKf4dL4SgGGvYPkGMs"
+    },
+    {
+      "action": "v0 approval 2",
+      "signature": "2ryJSMtDUwJxnyADGeY5WjMYcU4xz33GeYpCUkskKcRt8CA4UNikZMub4Gp7MUNvEFHTNMSakYRPYEQovU4U5A2N"
+    },
+    {
+      "action": "v0 release",
+      "signature": "5Lb2LVvadxcnsJNdhyvrwe4GoADEj496b9iVwRdaeLRirX1X2xjuxUVmfCrQ94TZGqKR6kk5AE8QzCQsrhDVtKbQ"
+    }
+  ]
+}

@@ -1,8 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Transaction } from "@solana/web3.js";
 import { confirmByPolling } from "@/lib/confirmation";
+import {
+  prepareWalletTransaction,
+  serializeSignedWalletTransaction,
+} from "@/lib/wallet-transaction";
 import {
   assertNetwork,
   connection,
@@ -23,6 +27,8 @@ export type TxState = {
 };
 export function useTransaction(onConfirmed?: () => void | Promise<void>) {
   const wallet = useWallet();
+  const currentWallet = useRef(wallet);
+  currentWallet.current = wallet;
   const [state, setState] = useState<TxState>({ phase: "idle" });
   const busy = [
     "Preparing",
@@ -38,15 +44,22 @@ export function useTransaction(onConfirmed?: () => void | Promise<void>) {
     try {
       if (!wallet.publicKey || !wallet.signTransaction)
         throw new Error("Connect a compatible wallet first.");
+      const member = wallet.publicKey;
       setState({ phase: "Preparing", detail });
       await assertNetwork();
       const tx = await build();
       const latest = await connection.getLatestBlockhash("confirmed");
-      tx.feePayer = wallet.publicKey;
-      tx.recentBlockhash = latest.blockhash;
+      if (!currentWallet.current.publicKey?.equals(member))
+        throw new Error("Your connected wallet changed. Refresh the pot and try again.");
+      const prepared = prepareWalletTransaction(
+        tx,
+        member,
+        latest.blockhash,
+        wallet.wallet?.adapter.supportedTransactionVersions?.has(0) ?? false,
+      );
       setState({ phase: "Awaiting wallet confirmation", detail });
-      const signed = await wallet.signTransaction(tx);
-      signature = await connection.sendRawTransaction(signed.serialize(), {
+      const signed = await wallet.signTransaction(prepared);
+      signature = await connection.sendRawTransaction(serializeSignedWalletTransaction(signed), {
         skipPreflight: false,
         preflightCommitment: "confirmed",
         maxRetries: 3,
